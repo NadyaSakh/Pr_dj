@@ -1,0 +1,18 @@
+{%extends "djapp/base.html" %}
+
+{% block content %}
+    <div class = "1">
+{% if artists %}
+    <h1>Исполнители:</h1>
+    <h6><a href='{% url 'sort_alfabet' %}'>(По алфавиту)</a></h6>
+    <h6><a href='{% url 'sort_vise' %}'>(В обратном порядке)</a></h6>
+<ul>
+    {% for artist in artists %}
+        <li><a href= '{% url 'artist' artist %}'>{{artist}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No artists are available.</p>
+{% endif %}
+    </div>
+{%endblock%}

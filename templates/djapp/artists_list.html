@@ -1,0 +1,47 @@
+{%extends "djapp/base.html" %}
+
+{% block content %}
+
+<body>
+<table cellpadding="0" cellspacing="0">
+   <tr>
+    <td id="col1">
+        <h1>Певец</h1>
+        <h2>{{artist}}</h2>
+    </td>
+    <td>
+     <table cellpadding="0" cellspacing="0">
+      <tr>
+       <td id="col2">
+           <h1>Песни</h1>
+           {% for album in albums %}
+               {% for track in album.tracks.all %}
+                <h3>{{track}}</h3>
+               {% endfor %}
+            {% endfor %}
+       </td>
+       <td id="col3">
+           <h1>Жанры</h1>
+           <table class="text">
+               <tr>
+               {% for album in albums %}
+                   {% for genres in album.tracks.all %}
+                       <h4>{% for genre in genres.track.all %}
+                   <a href='{% url 'tracks_list' genre %}'>{{genre}}</a>
+                       {% endfor %}</h4>
+                   {% endfor %}
+               {% endfor %}
+               </tr>
+            </table>
+
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+  </table>
+
+</body>
+
+{% endblock %}
+

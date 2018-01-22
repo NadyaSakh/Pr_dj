@@ -1,0 +1,16 @@
+{%extends "djapp/base.html" %}
+
+{% block content %}
+<div>
+    {% if tracks %}
+    <h2>Песни по жанрy {{ genre }}:</h2>
+<ul>
+    {% for track in tracks %}
+        <h4>{{track}}</h4>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No tracks are available.</p>
+    </div>
+{% endif %}
+{%endblock%}

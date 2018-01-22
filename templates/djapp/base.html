@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Block</title>
+    <style>
+        div{
+         background: #afccdb;
+        }
+        h6 {
+            color: indigo;
+            text-align:center;
+        }
+        h2 {
+            color: red;
+            text-align:center;
+        }
+        h1 {
+            color: red;
+            text-align:center;
+        }
+        h4 {
+            color: blue;
+            text-align:center;
+        }
+        h3 {
+            color: green;
+            text-align:center;
+        }
+        li {
+            font-size : 32px;
+        }
+           TABLE {
+    width: 100%;
+   }
+   TD {
+    vertical-align: top;
+   }
+   #1 {
+     background: #afccdb;
+   }
+   #col1 {
+    width: 150px;
+    background: #fc0;
+   }
+   #col2 {
+    width: 60%;
+    background: #afccdb;
+   }
+   #col3 {
+    width: 40%;
+    background: #fc0;
+   }
+   #col1, #col2, #col3 {
+    padding: 5px;
+   }
+
+        table.text  {
+    width:  100%;
+    border-spacing: 0;
+   }
+
+   table.text td {
+    width: 50%;
+    vertical-align: top;
+   }
+
+    </style>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
